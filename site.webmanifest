@@ -4,7 +4,7 @@
   "description": "Senior full stack engineer. React, TypeScript, Node.js, Python. Cluj-Napoca, remote.",
   "start_url": "/",
   "display": "browser",
-  "background_color": "#f3efe6",
-  "theme_color": "#14181c",
+  "background_color": "#fbfbfa",
+  "theme_color": "#fbfbfa",
   "lang": "en"
 }
