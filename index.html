@@ -65,7 +65,11 @@
 <style id="pf-style">
 .pf-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:1.25rem;margin-top:1.25rem}
 .pf-card{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff}
-.pf-card video{display:block;cursor:pointer;width:100%;aspect-ratio:16/9;object-fit:cover;background:#0b1220}
+.pf-vid{position:relative;background:#0b1220}
+.pf-card video{display:block;cursor:pointer;width:100%;aspect-ratio:16/9;object-fit:contain;background:#0b1220}
+.pf-card video:fullscreen,.pf-card video:-webkit-full-screen{object-fit:contain;width:100%;height:100%}
+.pf-vid::after{content:"\1F50A  Tap for sound";position:absolute;right:.6rem;bottom:.6rem;padding:.25rem .6rem;border-radius:999px;background:rgba(11,18,32,.82);color:#fff;font-size:.74rem;font-weight:600;pointer-events:none;letter-spacing:.01em}
+.pf-vid.on::after{display:none}
 .pf-body{padding:.85rem 1rem 1rem;display:flex;flex-direction:column;gap:.45rem;flex:1}
 .pf-body h3{margin:0;font-size:1.02rem;line-height:1.3}
 .pf-meta{margin:0;font-size:.82rem;color:var(--muted)}
@@ -223,7 +227,7 @@
         <p class="pf-note">Short video walkthroughs of recent work. All built AI-assisted in Cursor with Claude, Gemini and Grok.</p>
         <div class="pf-grid">
           <article class="pf-card">
-            <video muted loop playsinline preload="none" poster="/projects/firese.jpg" data-src="/projects/firese.mp4" aria-label="Firese — field-service ERP and technician app, video walkthrough"></video>
+            <div class="pf-vid"><video muted loop playsinline preload="none" poster="/projects/firese.jpg" data-src="/projects/firese.mp4" aria-label="Firese — field-service ERP and technician app, video walkthrough"></video></div>
             <div class="pf-body">
               <h3>Firese — field-service ERP and technician app</h3>
               <p class="pf-meta">2026 · client work</p>
@@ -233,7 +237,7 @@
             </div>
           </article>
           <article class="pf-card">
-            <video muted loop playsinline preload="none" poster="/projects/profesor.jpg" data-src="/projects/profesor.mp4" aria-label="Professor AI — live AI teacher, video walkthrough"></video>
+            <div class="pf-vid"><video muted loop playsinline preload="none" poster="/projects/profesor.jpg" data-src="/projects/profesor.mp4" aria-label="Professor AI — live AI teacher, video walkthrough"></video></div>
             <div class="pf-body">
               <h3>Professor AI — live AI teacher</h3>
               <p class="pf-meta">2026 · own product</p>
@@ -243,7 +247,7 @@
             </div>
           </article>
           <article class="pf-card">
-            <video muted loop playsinline preload="none" poster="/projects/collab.jpg" data-src="/projects/collab.mp4" aria-label="Collab — video meetings with a shared editor, video walkthrough"></video>
+            <div class="pf-vid"><video muted loop playsinline preload="none" poster="/projects/collab.jpg" data-src="/projects/collab.mp4" aria-label="Collab — video meetings with a shared editor, video walkthrough"></video></div>
             <div class="pf-body">
               <h3>Collab — video meetings with a shared editor</h3>
               <p class="pf-meta">2024–2025 · open source</p>
@@ -253,7 +257,7 @@
             </div>
           </article>
           <article class="pf-card">
-            <video muted loop playsinline preload="none" poster="/projects/grile.jpg" data-src="/projects/grile.mp4" aria-label="GrileAdmitere — exam prep platform, video walkthrough"></video>
+            <div class="pf-vid"><video muted loop playsinline preload="none" poster="/projects/grile.jpg" data-src="/projects/grile.mp4" aria-label="GrileAdmitere — exam prep platform, video walkthrough"></video></div>
             <div class="pf-body">
               <h3>GrileAdmitere — exam prep platform</h3>
               <p class="pf-meta">Live · 10,000+ students</p>
@@ -263,7 +267,7 @@
             </div>
           </article>
           <article class="pf-card">
-            <video muted loop playsinline preload="none" poster="/projects/meditatii.jpg" data-src="/projects/meditatii.mp4" aria-label="MeditatiiDirect — tutoring marketplace, video walkthrough"></video>
+            <div class="pf-vid"><video muted loop playsinline preload="none" poster="/projects/meditatii.jpg" data-src="/projects/meditatii.mp4" aria-label="MeditatiiDirect — tutoring marketplace, video walkthrough"></video></div>
             <div class="pf-body">
               <h3>MeditatiiDirect — tutoring marketplace</h3>
               <p class="pf-meta">Live · own product</p>
@@ -273,7 +277,7 @@
             </div>
           </article>
           <article class="pf-card">
-            <video muted loop playsinline preload="none" poster="/projects/collaborare.jpg" data-src="/projects/collaborare.mp4" aria-label="Collaborare — online judge for C++, video walkthrough"></video>
+            <div class="pf-vid"><video muted loop playsinline preload="none" poster="/projects/collaborare.jpg" data-src="/projects/collaborare.mp4" aria-label="Collaborare — online judge for C++, video walkthrough"></video></div>
             <div class="pf-body">
               <h3>Collaborare — online judge for C++</h3>
               <p class="pf-meta">Live · own product</p>
@@ -283,7 +287,7 @@
             </div>
           </article>
           <article class="pf-card">
-            <video muted loop playsinline preload="none" poster="/projects/cabanly.jpg" data-src="/projects/cabanly.mp4" aria-label="Cabanly — cabin rental marketplace, video walkthrough"></video>
+            <div class="pf-vid"><video muted loop playsinline preload="none" poster="/projects/cabanly.jpg" data-src="/projects/cabanly.mp4" aria-label="Cabanly — cabin rental marketplace, video walkthrough"></video></div>
             <div class="pf-body">
               <h3>Cabanly — cabin rental marketplace</h3>
               <p class="pf-meta">Live</p>
@@ -293,7 +297,7 @@
             </div>
           </article>
           <article class="pf-card">
-            <video muted loop playsinline preload="none" poster="/projects/bremen.jpg" data-src="/projects/bremen.mp4" aria-label="Bremen Auto — car dealer website, video walkthrough"></video>
+            <div class="pf-vid"><video muted loop playsinline preload="none" poster="/projects/bremen.jpg" data-src="/projects/bremen.mp4" aria-label="Bremen Auto — car dealer website, video walkthrough"></video></div>
             <div class="pf-body">
               <h3>Bremen Auto — car dealer website</h3>
               <p class="pf-meta">Live · client work</p>
@@ -303,7 +307,7 @@
             </div>
           </article>
           <article class="pf-card">
-            <video muted loop playsinline preload="none" poster="/projects/dco.jpg" data-src="/projects/dco.mp4" aria-label="DCO Rent a Car — car rental website, video walkthrough"></video>
+            <div class="pf-vid"><video muted loop playsinline preload="none" poster="/projects/dco.jpg" data-src="/projects/dco.mp4" aria-label="DCO Rent a Car — car rental website, video walkthrough"></video></div>
             <div class="pf-body">
               <h3>DCO Rent a Car — car rental website</h3>
               <p class="pf-meta">Live · client work</p>
@@ -313,7 +317,7 @@
             </div>
           </article>
           <article class="pf-card">
-            <video muted loop playsinline preload="none" poster="/projects/optim.jpg" data-src="/projects/optim.mp4" aria-label="Optim Catering — catering website, video walkthrough"></video>
+            <div class="pf-vid"><video muted loop playsinline preload="none" poster="/projects/optim.jpg" data-src="/projects/optim.mp4" aria-label="Optim Catering — catering website, video walkthrough"></video></div>
             <div class="pf-body">
               <h3>Optim Catering — catering website</h3>
               <p class="pf-meta">Live</p>
@@ -323,7 +327,7 @@
             </div>
           </article>
           <article class="pf-card">
-            <video muted loop playsinline preload="none" poster="/projects/etichete.jpg" data-src="/projects/etichete.mp4" aria-label="Etichett Prod — manufacturer website, video walkthrough"></video>
+            <div class="pf-vid"><video muted loop playsinline preload="none" poster="/projects/etichete.jpg" data-src="/projects/etichete.mp4" aria-label="Etichett Prod — manufacturer website, video walkthrough"></video></div>
             <div class="pf-body">
               <h3>Etichett Prod — manufacturer website</h3>
               <p class="pf-meta">Live · client work</p>
@@ -426,13 +430,25 @@
 
 <script id="pf-script">
 (() => {
-  const vids = document.querySelectorAll('.pf-card video');
-  if (matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) { vids.forEach(v => { v.src = v.dataset.src; }); return; }
+  const vids = [...document.querySelectorAll('.pf-card video')];
+  const load = v => { if (!v.src) v.src = v.dataset.src; };
+  const soundOn = v => {
+    vids.forEach(o => { if (o !== v && !o.muted) { o.muted = true; o.controls = false; o.closest('.pf-vid').classList.remove('on'); } });
+    load(v);
+    v.muted = false; v.controls = true; v.currentTime = 0;
+    v.closest('.pf-vid').classList.add('on');
+    v.play().catch(() => {});
+  };
+  vids.forEach(v => {
+    v.addEventListener('click', e => { if (v.muted) { e.preventDefault(); soundOn(v); } });
+    v.addEventListener('volumechange', () => { v.closest('.pf-vid').classList.toggle('on', !v.muted); });
+  });
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) { vids.forEach(load); return; }
   const io = new IntersectionObserver(es => es.forEach(e => {
     const v = e.target;
-    if (e.isIntersecting) { if (!v.src) v.src = v.dataset.src; v.play().catch(() => {}); } else v.pause();
+    if (e.isIntersecting) { load(v); if (v.muted) v.play().catch(() => {}); } else if (v.muted) v.pause();
   }), { threshold: 0.35 });
-  vids.forEach(v => { io.observe(v); v.addEventListener('click', () => { v.controls = true; }, { once: true }); });
+  vids.forEach(v => io.observe(v));
 })();
 </script>
 </body>
