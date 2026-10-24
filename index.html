@@ -73,6 +73,15 @@
 .pf-tags{display:flex;flex-wrap:wrap;gap:.3rem;margin:0;padding:0;list-style:none}
 .pf-tags li{font-size:.74rem;padding:.12rem .5rem;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
 .pf-link{margin-top:auto;font-size:.88rem}
+.pf-card.pf-wide{grid-column:1/-1}
+.pf-media{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:1.25rem;align-items:center;padding:1.1rem;background:#0b1220}
+.pf-media .pf-desk video{border-radius:8px}
+.pf-media figure{margin:0}
+.pf-media figcaption{margin-top:.5rem;color:#cbd5e1;font-size:.8rem;text-align:center}
+.pf-phone{position:relative;width:200px;padding:9px;border-radius:30px;background:#1c1f26;box-shadow:0 0 0 2px #3a3f4b,0 12px 30px rgba(0,0,0,.45)}
+.pf-phone::before{content:"";position:absolute;top:15px;left:50%;width:9px;height:9px;margin-left:-4.5px;border-radius:50%;background:#05070b;z-index:2}
+.pf-card .pf-phone video{aspect-ratio:9/19.5;object-fit:cover;object-position:top;border-radius:22px;background:#fff}
+@media (max-width:720px){.pf-media{grid-template-columns:1fr}.pf-phone{margin:0 auto}}
 .pf-note{margin:.4rem 0 0;color:var(--muted);font-size:.92rem}
 </style>
 </head>
@@ -118,7 +127,7 @@
           <div>
             <h3>Senior Full Stack Developer</h3>
             <p class="org">Independent</p>
-            <p>Android and iOS field-service apps for <a href="https://firese.ro/">Firese</a>, a national fire-protection and maintenance company: a live GPS view of every technician, and defect photos filed to the right client with location and timestamp. Backend and storage on AWS. The apps are private and confidential, so I cannot publish them. Client sites in React, TypeScript, and Node.js.</p>
+            <p>Android and iOS field-service apps for <a href="https://firese.ro/">Firese</a>, a national fire-protection and maintenance company: a live GPS view of every technician, and defect photos filed to the right client with location and timestamp. Backend and storage on AWS. Client data is confidential, so the portfolio shows both apps with demo data. Client sites in React, TypeScript, and Node.js.</p>
             <ul>
               <li>Firese admin dashboard in React and TypeScript on Supabase: clients, locations, installations, maintenance reports, JSON backup and restore, and public QR pages where a building’s owner sees its finished reports without logging in.</li>
               <li>Covered with unit, component, and end-to-end tests written test-first in Vitest, Testing Library, and Playwright.</li>
@@ -222,13 +231,24 @@
         <h2 id="work-heading">Portfolio</h2>
         <p class="pf-note">Short video walkthroughs of recent work. All built AI-assisted in Cursor with Claude, Gemini and Grok.</p>
         <div class="pf-grid">
-          <article class="pf-card">
-            <video muted loop playsinline preload="none" poster="/projects/firese.jpg" data-src="/projects/firese.mp4" aria-label="Firese — field-service ERP and technician app, video walkthrough"></video>
+          <article class="pf-card pf-wide">
+            <div class="pf-media">
+              <figure class="pf-desk">
+                <video muted loop playsinline preload="none" poster="/projects/firese.jpg" data-src="/projects/firese.mp4" aria-label="Firese admin ERP dashboard, video walkthrough"></video>
+                <figcaption>Admin ERP dashboard</figcaption>
+              </figure>
+              <figure>
+                <div class="pf-phone">
+                  <video muted loop playsinline preload="none" poster="/projects/firese-app.jpg" data-src="/projects/firese-app.mp4" aria-label="Firese technician app on Android, video walkthrough"></video>
+                </div>
+                <figcaption>Technician app · Android</figcaption>
+              </figure>
+            </div>
             <div class="pf-body">
               <h3>Firese — field-service ERP and technician app</h3>
               <p class="pf-meta">2026 · client work</p>
-              <p class="pf-desc">Platform for a fire-safety maintenance company. Technicians photograph hydrants, extinguishers and detectors and file reports per location; the admin ERP plans visits with travel-time checks, tracks technicians on a live map and publishes QR report pages. Fixed a cross-device sign-out bug test-first with Vitest and Playwright.</p>
-              <ul class="pf-tags"><li>React Native</li><li>React</li><li>TypeScript</li><li>Node.js</li><li>Supabase</li><li>AWS</li><li>Playwright</li></ul>
+              <p class="pf-desc">Platform for a fire-safety maintenance company, shown here with demo data. On the phone, technicians open a client and location, photograph hydrants, extinguishers and detectors, log defects, pressure measurements and a materials estimate, and close the report with a QR label; the admin ERP plans visits with travel-time checks, tracks technicians on a live map and publishes QR report pages. Fixed a cross-device sign-out bug test-first with Vitest and Playwright.</p>
+              <ul class="pf-tags"><li>Android &amp; iOS (Capacitor)</li><li>React</li><li>TypeScript</li><li>Node.js</li><li>Supabase</li><li>AWS</li><li>Playwright</li></ul>
               
             </div>
           </article>
