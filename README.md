@@ -1,3 +1,3 @@
-# alexalghisi
+# Alghisi Alessandro Paolo
 
-CV for Alessandro Paolo Alghisi. Published at https://alexalghisi.github.io
+CV for Alghisi Alessandro Paolo. Published at https://alexalghisi.github.io
